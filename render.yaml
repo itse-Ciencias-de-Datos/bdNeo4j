@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: neo4j-db
+    env: docker
+
+    plan: starter
+
+    disk:
+      name: neo4j-data
+      mountPath: /data
+      sizeGB: 10
+
+    envVars:
+      - key: NEO4J_AUTH
+        value: neo4j/password123
